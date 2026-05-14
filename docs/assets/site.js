@@ -3,6 +3,12 @@ const translations = {
     title: "Persona-Forge",
     description:
       "Persona-Forge is a reusable character voice training framework built around GPT-SoVITS, reference-bank tooling, and repo-friendly release workflows.",
+    "landing.kicker": "A Framework for Character Voices",
+    "landing.quote":
+      "Between constellations and code, a voice system begins to take shape.",
+    "landing.subquote":
+      "A local-first framework for training, curating, and releasing character voice systems around GPT-SoVITS.",
+    "landing.button": "Enter Framework",
     "hero.eyebrow": "Character Voice Toolkit",
     "hero.lede":
       "A reusable framework for building anime and character voice systems: manifest generation, GPT-SoVITS training wrappers, reference-bank labeling, release packaging, and local synthesis.",
@@ -17,7 +23,11 @@ const translations = {
     "hero.status4.label": "Status",
     "hero.status4.value": "Smoke-tested",
     "hero.microcopy":
-      "Keep framework code separate from character data, refs, and final weights.",
+      "Reusable tooling, kept separate from character-specific assets.",
+    "visual.tag": "Celestial Workshop",
+    "visual.title": "A project image for the framework itself",
+    "visual.body":
+      "Star charts, orbital geometry, and release tooling gathered into a single quiet workbench.",
     "stats.cli": "primary CLI commands",
     "stats.repos": "repository layers",
     "stats.instance": "validated character instance",
@@ -39,9 +49,9 @@ const translations = {
     "overview.card4.body":
       "Support a clean split between framework repo, character repo, GitHub, and Hugging Face assets.",
     "workflow.tag": "Pipeline",
-    "workflow.title": "A release-oriented local workflow",
+    "workflow.title": "A local workflow from data to release",
     "workflow.body":
-      "The framework is designed around iterative local training first, then clean publication to GitHub and Hugging Face.",
+      "Manifest construction, feature preparation, staged training, reference curation, and release packaging are kept in one framework layer.",
     "workflow.step1.title": "Build manifest",
     "workflow.step1.body":
       "Normalize transcript CSV and wav paths into a single training list.",
@@ -102,6 +112,12 @@ const translations = {
     title: "Persona-Forge",
     description:
       "Persona-Forge 是一个围绕 GPT-SoVITS、参考库工具和发布工作流组织的通用角色语音训练框架。",
+    "landing.kicker": "角色语音框架",
+    "landing.quote":
+      "在群星与代码之间，一套角色语音系统开始成形。",
+    "landing.subquote":
+      "一个以本地工作流为核心、围绕 GPT-SoVITS 组织的训练、整理与发布框架。",
+    "landing.button": "进入框架页",
     "hero.eyebrow": "角色语音工具链",
     "hero.lede":
       "一个面向二次元与角色语音系统的可复用框架：涵盖 manifest 构建、GPT-SoVITS 训练封装、参考音频情感标注、发布打包与本地推理。",
@@ -116,7 +132,11 @@ const translations = {
     "hero.status4.label": "状态",
     "hero.status4.value": "已做 smoke test",
     "hero.microcopy":
-      "把通用框架代码和角色数据、参考库、最终权重严格分开。",
+      "把可复用工具与角色专属资产清晰分层。",
+    "visual.tag": "星图工坊",
+    "visual.title": "属于框架本身的一张项目图",
+    "visual.body":
+      "星图、轨道几何与发布工具被放进同一个安静的工作台场景里。",
     "stats.cli": "核心 CLI 命令",
     "stats.repos": "仓库层级",
     "stats.instance": "已验证角色实例",
@@ -138,9 +158,9 @@ const translations = {
     "overview.card4.body":
       "支持框架仓库、角色仓库、GitHub 与 Hugging Face 之间的干净分层。",
     "workflow.tag": "流程",
-    "workflow.title": "面向发布的本地工作流",
+    "workflow.title": "从数据到发布的本地工作流",
     "workflow.body":
-      "这个框架围绕“先本地反复训练，再整洁发布到 GitHub 和 Hugging Face”来设计。",
+      "Manifest 构建、特征准备、分阶段训练、参考库整理与发布打包，都收在同一层框架工作流里。",
     "workflow.step1.title": "构建 manifest",
     "workflow.step1.body":
       "把转写 CSV 与 wav 路径规范化成单一训练列表。",
@@ -200,6 +220,12 @@ const translations = {
     title: "Persona-Forge",
     description:
       "Persona-Forge は GPT-SoVITS、参照バンクツール、公開向けワークフローを軸にした再利用可能なキャラクターボイス学習フレームワークです。",
+    "landing.kicker": "キャラクターボイスフレームワーク",
+    "landing.quote":
+      "星図とコードのあいだで、ひとつの音声システムが形を帯びていく。",
+    "landing.subquote":
+      "GPT-SoVITS を軸に、学習、整理、公開までをローカル主体でつなぐフレームワークです。",
+    "landing.button": "フレームワークへ進む",
     "hero.eyebrow": "キャラクターボイスツールキット",
     "hero.lede":
       "アニメ / キャラクター音声システム向けの再利用可能なフレームワーク。manifest 構築、GPT-SoVITS 学習ラッパー、参照音声ラベリング、公開パッケージング、ローカル推論までをまとめます。",
@@ -214,7 +240,11 @@ const translations = {
     "hero.status4.label": "状態",
     "hero.status4.value": "スモークテスト済み",
     "hero.microcopy":
-      "フレームワークコードと、キャラクターデータ・参照バンク・最終重みを明確に分離します。",
+      "再利用ツールとキャラクター固有アセットを明確に分離した構成です。",
+    "visual.tag": "星図の工房",
+    "visual.title": "フレームワークそのものを映す一枚",
+    "visual.body":
+      "星図、軌道幾何、公開ツールが静かな作業台の上に集められています。",
     "stats.cli": "主要 CLI コマンド",
     "stats.repos": "リポジトリ層",
     "stats.instance": "検証済みキャラクター実例",
@@ -236,9 +266,9 @@ const translations = {
     "overview.card4.body":
       "フレームワークリポジトリ、キャラクターリポジトリ、GitHub、Hugging Face の役割分離を支えます。",
     "workflow.tag": "パイプライン",
-    "workflow.title": "公開を見据えたローカルワークフロー",
+    "workflow.title": "データから公開までのローカルワークフロー",
     "workflow.body":
-      "このフレームワークは、まずローカルで反復学習し、その後 GitHub と Hugging Face に整然と公開する流れを前提に設計しています。",
+      "manifest 構築、特徴準備、段階的学習、参照整理、公開パッケージ化までを 1 つのフレームワーク層に収めています。",
     "workflow.step1.title": "manifest 構築",
     "workflow.step1.body":
       "転写 CSV と wav パスを 1 つの学習リストへ正規化します。",

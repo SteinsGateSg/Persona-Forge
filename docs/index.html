@@ -17,7 +17,23 @@
       <button class="lang-chip" type="button" data-lang="ja">日本語</button>
     </div>
 
-    <div class="page-shell">
+    <section class="landing">
+      <div class="landing-scrim"></div>
+      <div class="landing-copy">
+        <p class="landing-kicker" data-i18n="landing.kicker">A Framework for Character Voices</p>
+        <h1>Persona-Forge</h1>
+        <p class="landing-quote" data-i18n="landing.quote">
+          Between constellations and code, a voice system begins to take shape.
+        </p>
+        <p class="landing-subquote" data-i18n="landing.subquote">
+          A local-first framework for training, curating, and releasing
+          character voice systems around GPT-SoVITS.
+        </p>
+        <a class="button primary landing-button" href="#project" data-i18n="landing.button">Enter Framework</a>
+      </div>
+    </section>
+
+    <div class="page-shell" id="project">
       <header class="hero">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Character Voice Toolkit</p>
@@ -62,6 +78,20 @@
       </header>
 
       <main>
+        <section class="visual-interlude">
+          <div class="section-copy visual-copy">
+            <p class="section-tag" data-i18n="visual.tag">Celestial Workshop</p>
+            <h2 data-i18n="visual.title">A project image for the framework itself</h2>
+            <p data-i18n="visual.body">
+              Star charts, orbital geometry, and release tooling gathered into a
+              single quiet workbench.
+            </p>
+          </div>
+          <figure class="visual-figure">
+            <img src="./assets/persona-interlude-atlas.png" alt="A celestial workshop scene with star charts and observatory instruments" />
+          </figure>
+        </section>
+
         <section class="stats">
           <article>
             <span class="stat-value">7</span>
@@ -114,10 +144,11 @@
         <section class="workflow">
           <div class="section-copy">
             <p class="section-tag" data-i18n="workflow.tag">Pipeline</p>
-            <h2 data-i18n="workflow.title">A release-oriented local workflow</h2>
+            <h2 data-i18n="workflow.title">A local workflow from data to release</h2>
             <p data-i18n="workflow.body">
-              The framework is designed around iterative local training first,
-              then clean publication to GitHub and Hugging Face.
+              Manifest construction, feature preparation, staged training,
+              reference curation, and release packaging are kept in one
+              framework layer.
             </p>
           </div>
           <div class="step-grid">
