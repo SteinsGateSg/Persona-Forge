@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Persona-Forge</title>
+    <meta
+      name="description"
+      content="Persona-Forge is a reusable character voice training framework built around GPT-SoVITS, reference-bank tooling, and repo-friendly release workflows."
+    />
+    <link rel="stylesheet" href="./assets/site.css" />
+  </head>
+  <body>
+    <div class="lang-float" aria-label="Language selector">
+      <button class="lang-chip is-active" type="button" data-lang="en">EN</button>
+      <button class="lang-chip" type="button" data-lang="zh">中文</button>
+      <button class="lang-chip" type="button" data-lang="ja">日本語</button>
+    </div>
+
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Character Voice Toolkit</p>
+          <h1>Persona-Forge</h1>
+          <p class="lede" data-i18n="hero.lede">
+            A reusable framework for building anime and character voice systems:
+            manifest generation, GPT-SoVITS training wrappers, reference-bank
+            labeling, release packaging, and local synthesis.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/SteinsGateSg/Persona-Forge" data-i18n="hero.repoButton">GitHub Repository</a>
+            <a class="button secondary" href="https://github.com/SteinsGateSg/Mayuri-Amadeus" data-i18n="hero.exampleButton">Example Character Repo</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="status-card">
+            <p class="card-kicker" data-i18n="hero.kicker">Release Focus</p>
+            <div class="status-grid">
+              <div>
+                <span class="label" data-i18n="hero.status1.label">Mode</span>
+                <strong data-i18n="hero.status1.value">Local-first</strong>
+              </div>
+              <div>
+                <span class="label" data-i18n="hero.status2.label">Backend</span>
+                <strong>GPT-SoVITS</strong>
+              </div>
+              <div>
+                <span class="label" data-i18n="hero.status3.label">Layout</span>
+                <strong data-i18n="hero.status3.value">Two-repo split</strong>
+              </div>
+              <div>
+                <span class="label" data-i18n="hero.status4.label">Status</span>
+                <strong data-i18n="hero.status4.value">Smoke-tested</strong>
+              </div>
+            </div>
+            <p class="microcopy" data-i18n="hero.microcopy">
+              Keep framework code separate from character data, refs, and final
+              weights.
+            </p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="stats">
+          <article>
+            <span class="stat-value">7</span>
+            <span class="stat-label" data-i18n="stats.cli">primary CLI commands</span>
+          </article>
+          <article>
+            <span class="stat-value">2</span>
+            <span class="stat-label" data-i18n="stats.repos">repository layers</span>
+          </article>
+          <article>
+            <span class="stat-value">1</span>
+            <span class="stat-label" data-i18n="stats.instance">validated character instance</span>
+          </article>
+          <article>
+            <span class="stat-value">v0.1.0</span>
+            <span class="stat-label" data-i18n="stats.version">current framework tag</span>
+          </article>
+        </section>
+
+        <section class="two-col">
+          <div class="section-copy">
+            <p class="section-tag" data-i18n="overview.tag">Framework Scope</p>
+            <h2 data-i18n="overview.title">What Persona-Forge owns</h2>
+            <p data-i18n="overview.body">
+              Persona-Forge keeps only reusable workflow code. Character-specific
+              datasets, curated refs, release weights, and demos should live in
+              separate character repositories.
+            </p>
+          </div>
+          <div class="card-grid">
+            <article class="info-card">
+              <h3 data-i18n="overview.card1.title">Manifest Builder</h3>
+              <p data-i18n="overview.card1.body">Turn transcript CSV plus wav directories into GPT-SoVITS-ready training lists.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="overview.card2.title">Training Wrappers</h3>
+              <p data-i18n="overview.card2.body">Run prepare, SoVITS training, GPT training, and SoVITS export without hand-editing upstream configs.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="overview.card3.title">Reference Tooling</h3>
+              <p data-i18n="overview.card3.body">Label emotion candidates, shortlist refs, and package a release-friendly reference bank.</p>
+            </article>
+            <article class="info-card">
+              <h3 data-i18n="overview.card4.title">Repo Hygiene</h3>
+              <p data-i18n="overview.card4.body">Support a clean split between framework repo, character repo, GitHub, and Hugging Face assets.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="workflow">
+          <div class="section-copy">
+            <p class="section-tag" data-i18n="workflow.tag">Pipeline</p>
+            <h2 data-i18n="workflow.title">A release-oriented local workflow</h2>
+            <p data-i18n="workflow.body">
+              The framework is designed around iterative local training first,
+              then clean publication to GitHub and Hugging Face.
+            </p>
+          </div>
+          <div class="step-grid">
+            <article class="step-card">
+              <span class="step-index">01</span>
+              <strong data-i18n="workflow.step1.title">Build manifest</strong>
+              <p data-i18n="workflow.step1.body">Normalize transcript CSV and wav paths into a single training list.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">02</span>
+              <strong data-i18n="workflow.step2.title">Prepare dataset</strong>
+              <p data-i18n="workflow.step2.body">Extract text, HuBERT, wav32k, and semantic features through upstream GPT-SoVITS scripts.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">03</span>
+              <strong data-i18n="workflow.step3.title">Train + export</strong>
+              <p data-i18n="workflow.step3.body">Tune SoVITS and GPT in stages, export inference-ready weights, and keep resumable checkpoints.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">04</span>
+              <strong data-i18n="workflow.step4.title">Curate refs</strong>
+              <p data-i18n="workflow.step4.body">Label and shortlist reference clips for emotion-aware prompting and demos.</p>
+            </article>
+            <article class="step-card">
+              <span class="step-index">05</span>
+              <strong data-i18n="workflow.step5.title">Package release</strong>
+              <p data-i18n="workflow.step5.body">Keep code in GitHub, large weights and datasets in Hugging Face, and expose a clean public character repo.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="spotlight">
+          <div class="spotlight-copy">
+            <p class="section-tag" data-i18n="quick.tag">Quick Start</p>
+            <h2 data-i18n="quick.title">Minimal local path</h2>
+            <p data-i18n="quick.body">
+              Install the framework, point it at an existing GPT-SoVITS clone,
+              and start with manifest building or a doctor check before training.
+            </p>
+          </div>
+          <div class="code-card">
+            <pre><code>git clone https://github.com/SteinsGateSg/Persona-Forge.git
+cd Persona-Forge
+pip install -e .
+
+persona-forge doctor \
+  --gpt-sovits-root /path/to/GPT-SoVITS \
+  --pretrained-root /path/to/GPT-SoVITS-models \
+  --manifest artifacts/manifests/train.list</code></pre>
+          </div>
+        </section>
+
+        <section class="commands-section">
+          <div class="section-copy">
+            <p class="section-tag" data-i18n="commands.tag">Commands</p>
+            <h2 data-i18n="commands.title">Core entrypoints</h2>
+          </div>
+          <div class="commands-grid">
+            <article class="command-card"><code>build-manifest</code><p data-i18n="commands.item1">Create a training list from transcripts and wav files.</p></article>
+            <article class="command-card"><code>prepare</code><p data-i18n="commands.item2">Run upstream feature extraction and semantic preparation.</p></article>
+            <article class="command-card"><code>train-sovits</code><p data-i18n="commands.item3">Train or resume the acoustic / timbre side.</p></article>
+            <article class="command-card"><code>export-sovits</code><p data-i18n="commands.item4">Export a SoVITS checkpoint into an inference weight file.</p></article>
+            <article class="command-card"><code>train-gpt</code><p data-i18n="commands.item5">Train or resume the text-to-semantic stage.</p></article>
+            <article class="command-card"><code>synthesize</code><p data-i18n="commands.item6">Generate audio from a fixed GPT + SoVITS pair.</p></article>
+            <article class="command-card"><code>label-emotions</code><p data-i18n="commands.item7">Label and shortlist reference candidates with an OpenAI-compatible API.</p></article>
+            <article class="command-card"><code>doctor</code><p data-i18n="commands.item8">Check local prerequisites before a real run.</p></article>
+          </div>
+        </section>
+
+        <section class="links-grid">
+          <article class="link-card">
+            <p class="section-tag" data-i18n="links.docs.tag">Docs</p>
+            <h3 data-i18n="links.docs.title">Repository documents</h3>
+            <ul>
+              <li><code>README.md</code></li>
+              <li><code>README_ZH.md</code></li>
+              <li><code>examples/minimal_profile.yaml</code></li>
+              <li><code>pyproject.toml</code></li>
+            </ul>
+          </article>
+          <article class="link-card">
+            <p class="section-tag" data-i18n="links.arch.tag">Architecture</p>
+            <h3 data-i18n="links.arch.title">Two-repo release model</h3>
+            <ul>
+              <li data-i18n="links.arch.item1">framework repo for reusable tooling</li>
+              <li data-i18n="links.arch.item2">character repo for refs, metadata, and demos</li>
+              <li data-i18n="links.arch.item3">Hugging Face for large assets</li>
+              <li data-i18n="links.arch.item4">GitHub Pages for public landing pages</li>
+            </ul>
+          </article>
+          <article class="link-card">
+            <p class="section-tag" data-i18n="links.external.tag">External</p>
+            <h3 data-i18n="links.external.title">Published endpoints</h3>
+            <ul>
+              <li><a href="https://github.com/SteinsGateSg/Persona-Forge" data-i18n="links.external.repo">GitHub framework repo</a></li>
+              <li><a href="https://github.com/SteinsGateSg/Mayuri-Amadeus" data-i18n="links.external.example">Mayuri-Amadeus character repo</a></li>
+              <li><a href="https://huggingface.co/SteinsGateSg/mayuri-voice" data-i18n="links.external.model">Example HF model repo</a></li>
+              <li><a href="https://huggingface.co/datasets/SteinsGateSg/mayuri-voice-dataset" data-i18n="links.external.dataset">Example HF dataset repo</a></li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="roadmap">
+          <div class="section-copy">
+            <p class="section-tag" data-i18n="roadmap.tag">Next</p>
+            <h2 data-i18n="roadmap.title">What comes after this first release</h2>
+          </div>
+          <div class="timeline">
+            <article>
+              <strong data-i18n="roadmap.item1.title">1. Profile-driven workflows</strong>
+              <p data-i18n="roadmap.item1.body">Reduce command repetition and let character repos declare defaults more cleanly.</p>
+            </article>
+            <article>
+              <strong data-i18n="roadmap.item2.title">2. Ref packaging tools</strong>
+              <p data-i18n="roadmap.item2.body">Automate turning labeled candidates into a release-ready reference-bank structure.</p>
+            </article>
+            <article>
+              <strong data-i18n="roadmap.item3.title">3. Evaluation and CI</strong>
+              <p data-i18n="roadmap.item3.body">Add smoke tests, small evaluation helpers, and stricter repo validation.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./assets/site.js"></script>
+  </body>
+</html>

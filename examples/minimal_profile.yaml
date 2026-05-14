@@ -1,0 +1,16 @@
+character: example_character
+speaker: speaker_0
+language: ja
+dataset:
+  transcript_csv: data/meta/transcripts.csv
+  wav_dir: data/raw/wav
+manifest:
+  output_list: artifacts/manifests/train.list
+training:
+  version: v2
+  exp_name: example_character_v2
+  gpus: "0"
+  sovits_batch_size: 4
+  gpt_batch_size: 2
+reference_bank:
+  output_dir: artifacts/reference_bank
