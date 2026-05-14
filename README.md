@@ -1,16 +1,20 @@
 # Persona-Forge
 
+<p align="left">
+  <a href="https://steinsgatesg.github.io/Persona-Forge/">
+    <img src="https://img.shields.io/badge/Homepage-23384a?style=flat-square&logo=googlechrome&logoColor=f4f8ff" alt="Homepage" />
+  </a>
+  <a href="https://github.com/SteinsGateSg/Persona-Forge">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=ffffff" alt="GitHub repository" />
+  </a>
+  <a href="https://github.com/SteinsGateSg/Mayuri-Amadeus">
+    <img src="https://img.shields.io/badge/Example-Mayuri--Amadeus-7b4f3b?style=flat-square&logo=bookstack&logoColor=fffaf4" alt="Example character repository" />
+  </a>
+</p>
+
 Chinese documentation: [README_ZH.md](README_ZH.md)
 
 `Persona-Forge` is a reusable training toolkit for anime / character voice projects built around a local `GPT-SoVITS` workflow.
-
-GitHub repo:
-
-- `https://github.com/SteinsGateSg/Persona-Forge`
-
-Project homepage:
-
-- `docs/index.html`
 
 This repository is the framework half of a two-repo split:
 
@@ -18,8 +22,6 @@ This repository is the framework half of a two-repo split:
 - character repo: one concrete character dataset, refs, weights, and demos
 
 The first full character instance is `Mayuri-Amadeus`:
-
-- `https://github.com/SteinsGateSg/Mayuri-Amadeus`
 
 ## What It Covers
 

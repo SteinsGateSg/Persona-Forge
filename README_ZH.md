@@ -1,16 +1,20 @@
 # Persona-Forge
 
+<p align="left">
+  <a href="https://steinsgatesg.github.io/Persona-Forge/">
+    <img src="https://img.shields.io/badge/Homepage-23384a?style=flat-square&logo=googlechrome&logoColor=f4f8ff" alt="Homepage" />
+  </a>
+  <a href="https://github.com/SteinsGateSg/Persona-Forge">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=ffffff" alt="GitHub repository" />
+  </a>
+  <a href="https://github.com/SteinsGateSg/Mayuri-Amadeus">
+    <img src="https://img.shields.io/badge/Example-Mayuri--Amadeus-7b4f3b?style=flat-square&logo=bookstack&logoColor=fffaf4" alt="Example character repository" />
+  </a>
+</p>
+
 English documentation: [README.md](README.md)
 
 `Persona-Forge` 是一个面向二次元 / 角色语音项目的通用训练工具仓库，底层围绕本地 `GPT-SoVITS` 工作流组织。
-
-GitHub 仓库：
-
-- `https://github.com/SteinsGateSg/Persona-Forge`
-
-项目主页：
-
-- `docs/index.html`
 
 它是“两个独立仓库”方案里的**通用框架仓库**：
 
@@ -18,8 +22,6 @@ GitHub 仓库：
 - 角色仓库：某一个具体角色的数据、参考库、权重与 demo
 
 目前第一个完整角色实例是 `Mayuri-Amadeus`：
-
-- `https://github.com/SteinsGateSg/Mayuri-Amadeus`
 
 ## 这个仓库负责什么
 
