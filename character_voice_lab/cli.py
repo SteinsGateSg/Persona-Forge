@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 
 from . import __version__
-from . import gpt_sovits, manifest, reference_bank, synthesize
+from . import gpt_sovits, manifest, reference_bank, selector, synthesize
 
 
 TOP_LEVEL_HELP = """persona-forge
@@ -11,6 +11,7 @@ TOP_LEVEL_HELP = """persona-forge
 Usage:
   persona-forge build-manifest [args...]
   persona-forge label-emotions [args...]
+  persona-forge select-reference [args...]
   persona-forge prepare [args...]
   persona-forge train-sovits [args...]
   persona-forge export-sovits [args...]
@@ -39,6 +40,8 @@ def main(argv: list[str] | None = None) -> int:
         return manifest.main(args[1:])
     if args[0] == "label-emotions":
         return reference_bank.main(args[1:])
+    if args[0] == "select-reference":
+        return selector.main(args[1:])
     if args[0] == "synthesize":
         return synthesize.main(args[1:])
     if args[0] in GPT_SOVITS_COMMANDS:

@@ -7,14 +7,14 @@ const translations = {
     "landing.quote":
       "Between constellations and code, a voice system begins to take shape.",
     "landing.subquote":
-      "A local-first framework for training, curating, and releasing character voice systems around GPT-SoVITS.",
+      "A local-first framework for shaping character voice systems around GPT-SoVITS, reference banks, and local synthesis.",
     "landing.button": "Enter Framework",
     "hero.eyebrow": "Character Voice Toolkit",
     "hero.lede":
-      "A reusable framework for building anime and character voice systems: manifest generation, GPT-SoVITS training wrappers, reference-bank labeling, release packaging, and local synthesis.",
+      "A reusable framework for building anime and character voice systems: manifest generation, GPT-SoVITS training wrappers, reference-bank labeling, and local synthesis.",
     "hero.repoButton": "GitHub Repository",
     "hero.exampleButton": "Example Character Repo",
-    "hero.kicker": "Release Focus",
+    "hero.kicker": "Current Alignment",
     "hero.status1.label": "Mode",
     "hero.status1.value": "Local-first",
     "hero.status2.label": "Backend",
@@ -23,11 +23,11 @@ const translations = {
     "hero.status4.label": "Status",
     "hero.status4.value": "Smoke-tested",
     "hero.microcopy":
-      "Reusable tooling, kept separate from character-specific assets.",
-    "visual.tag": "Celestial Workshop",
-    "visual.title": "A project image for the framework itself",
+      "Reusable tooling, held apart from any single character's worldline.",
+    "visual.tag": "Attractor Field",
+    "visual.title": "A quieter atlas beneath the same stars",
     "visual.body":
-      "Star charts, orbital geometry, and release tooling gathered into a single quiet workbench.",
+      "Constellations, instrument lines, and field notes resting where observation turns into method.",
     "stats.cli": "primary CLI commands",
     "stats.repos": "repository layers",
     "stats.instance": "validated character instance",
@@ -44,14 +44,14 @@ const translations = {
       "Run prepare, SoVITS training, GPT training, and SoVITS export without hand-editing upstream configs.",
     "overview.card3.title": "Reference Tooling",
     "overview.card3.body":
-      "Label emotion candidates, shortlist refs, and package a release-friendly reference bank.",
+      "Label emotion candidates, shortlist refs, and shape a stable reference bank.",
     "overview.card4.title": "Repo Hygiene",
     "overview.card4.body":
       "Support a clean split between framework repo, character repo, GitHub, and Hugging Face assets.",
-    "workflow.tag": "Pipeline",
-    "workflow.title": "A local workflow from data to release",
+    "workflow.tag": "Constellation",
+    "workflow.title": "The path from transcripts to a stable voice map",
     "workflow.body":
-      "Manifest construction, feature preparation, staged training, reference curation, and release packaging are kept in one framework layer.",
+      "Manifest construction, feature preparation, staged training, reference curation, and listening checks remain in one framework layer.",
     "workflow.step1.title": "Build manifest",
     "workflow.step1.body":
       "Normalize transcript CSV and wav paths into a single training list.",
@@ -64,9 +64,6 @@ const translations = {
     "workflow.step4.title": "Curate refs",
     "workflow.step4.body":
       "Label and shortlist reference clips for emotion-aware prompting and demos.",
-    "workflow.step5.title": "Package release",
-    "workflow.step5.body":
-      "Keep code in GitHub, large weights and datasets in Hugging Face, and expose a clean public character repo.",
     "quick.tag": "Quick Start",
     "quick.title": "Minimal local path",
     "quick.body":
@@ -84,14 +81,14 @@ const translations = {
     "commands.item8": "Check local prerequisites before a real run.",
     "links.docs.tag": "Docs",
     "links.docs.title": "Repository documents",
-    "links.arch.tag": "Architecture",
-    "links.arch.title": "Two-repo release model",
-    "links.arch.item1": "framework repo for reusable tooling",
-    "links.arch.item2": "character repo for refs, metadata, and demos",
+    "links.arch.tag": "Layout",
+    "links.arch.title": "Repository Constellation",
+    "links.arch.item1": "framework repo for reusable tools",
+    "links.arch.item2": "character repo for voices, refs, and mood fragments",
     "links.arch.item3": "Hugging Face for large assets",
-    "links.arch.item4": "GitHub Pages for public landing pages",
-    "links.external.tag": "External",
-    "links.external.title": "Published endpoints",
+    "links.arch.item4": "GitHub Pages for visual fronts",
+    "links.external.tag": "Signals",
+    "links.external.title": "Beyond this page",
     "links.external.repo": "GitHub framework repo",
     "links.external.example": "Mayuri-Amadeus character repo",
     "links.external.model": "Example HF model repo",
@@ -116,14 +113,14 @@ const translations = {
     "landing.quote":
       "在群星与代码之间，一套角色语音系统开始成形。",
     "landing.subquote":
-      "一个以本地工作流为核心、围绕 GPT-SoVITS 组织的训练、整理与发布框架。",
+      "一个以本地工作流为核心、围绕 GPT-SoVITS、参考库与本地推理组织起来的角色语音框架。",
     "landing.button": "进入框架页",
     "hero.eyebrow": "角色语音工具链",
     "hero.lede":
-      "一个面向二次元与角色语音系统的可复用框架：涵盖 manifest 构建、GPT-SoVITS 训练封装、参考音频情感标注、发布打包与本地推理。",
+      "一个面向二次元与角色语音系统的可复用框架：涵盖 manifest 构建、GPT-SoVITS 训练封装、参考音频情感标注与本地推理。",
     "hero.repoButton": "GitHub 仓库",
     "hero.exampleButton": "角色实例仓库",
-    "hero.kicker": "当前发布重点",
+    "hero.kicker": "当前相位",
     "hero.status1.label": "模式",
     "hero.status1.value": "本地优先",
     "hero.status2.label": "后端",
@@ -132,11 +129,11 @@ const translations = {
     "hero.status4.label": "状态",
     "hero.status4.value": "已做 smoke test",
     "hero.microcopy":
-      "把可复用工具与角色专属资产清晰分层。",
-    "visual.tag": "星图工坊",
-    "visual.title": "属于框架本身的一张项目图",
+      "把可复用工具留在更高的一层，让每个角色沿着自己的世界线展开。",
+    "visual.tag": "吸引场一隅",
+    "visual.title": "同一片星空下，更安静的一幅坐标图",
     "visual.body":
-      "星图、轨道几何与发布工具被放进同一个安静的工作台场景里。",
+      "星座线、仪器轮廓与笔记痕迹停在同一个画面里，像是观测开始变成方法的时刻。",
     "stats.cli": "核心 CLI 命令",
     "stats.repos": "仓库层级",
     "stats.instance": "已验证角色实例",
@@ -153,14 +150,14 @@ const translations = {
       "直接跑 prepare、SoVITS 训练、GPT 训练和 SoVITS 导出，不必手工改上游配置。",
     "overview.card3.title": "参考库工具",
     "overview.card3.body":
-      "标注情感候选、筛选参考音频，并整理成适合发布的 reference bank。",
+      "标注情感候选、筛选参考音频，并把它们整理成稳定清晰的 reference bank。",
     "overview.card4.title": "仓库卫生",
     "overview.card4.body":
       "支持框架仓库、角色仓库、GitHub 与 Hugging Face 之间的干净分层。",
-    "workflow.tag": "流程",
-    "workflow.title": "从数据到发布的本地工作流",
+    "workflow.tag": "星图路径",
+    "workflow.title": "从台词到稳定声线的一条路径",
     "workflow.body":
-      "Manifest 构建、特征准备、分阶段训练、参考库整理与发布打包，都收在同一层框架工作流里。",
+      "Manifest 构建、特征准备、分阶段训练、参考库整理与试听检查，都留在同一层框架工作流里。",
     "workflow.step1.title": "构建 manifest",
     "workflow.step1.body":
       "把转写 CSV 与 wav 路径规范化成单一训练列表。",
@@ -173,9 +170,6 @@ const translations = {
     "workflow.step4.title": "整理参考库",
     "workflow.step4.body":
       "标注并筛选参考音频，为情绪控制和试听 demo 做准备。",
-    "workflow.step5.title": "打包发布",
-    "workflow.step5.body":
-      "代码放 GitHub，大模型和数据集放 Hugging Face，再整理出一个干净的角色仓库。",
     "quick.tag": "快速开始",
     "quick.title": "最小本地起步路径",
     "quick.body":
@@ -192,14 +186,14 @@ const translations = {
     "commands.item8": "在正式运行前检查本地依赖。",
     "links.docs.tag": "文档",
     "links.docs.title": "仓库内文档",
-    "links.arch.tag": "架构",
-    "links.arch.title": "双仓库发布模型",
+    "links.arch.tag": "布局",
+    "links.arch.title": "仓库星图",
     "links.arch.item1": "框架仓库负责可复用工具",
-    "links.arch.item2": "角色仓库负责参考库、元数据和 demo",
+    "links.arch.item2": "角色仓库负责声音、参考库与情绪碎片",
     "links.arch.item3": "大资产放 Hugging Face",
-    "links.arch.item4": "公开主页用 GitHub Pages",
-    "links.external.tag": "外部链接",
-    "links.external.title": "已发布入口",
+    "links.arch.item4": "视觉首页放在 GitHub Pages",
+    "links.external.tag": "信号",
+    "links.external.title": "页面之外",
     "links.external.repo": "GitHub 框架仓库",
     "links.external.example": "Mayuri-Amadeus 角色仓库",
     "links.external.model": "示例 HF 模型仓库",
@@ -224,14 +218,14 @@ const translations = {
     "landing.quote":
       "星図とコードのあいだで、ひとつの音声システムが形を帯びていく。",
     "landing.subquote":
-      "GPT-SoVITS を軸に、学習、整理、公開までをローカル主体でつなぐフレームワークです。",
+      "GPT-SoVITS、参照バンク、ローカル推論を軸に、キャラクターボイスを形にしていくためのローカル主体フレームワークです。",
     "landing.button": "フレームワークへ進む",
     "hero.eyebrow": "キャラクターボイスツールキット",
     "hero.lede":
-      "アニメ / キャラクター音声システム向けの再利用可能なフレームワーク。manifest 構築、GPT-SoVITS 学習ラッパー、参照音声ラベリング、公開パッケージング、ローカル推論までをまとめます。",
+      "アニメ / キャラクター音声システム向けの再利用可能なフレームワーク。manifest 構築、GPT-SoVITS 学習ラッパー、参照音声ラベリング、ローカル推論までをまとめます。",
     "hero.repoButton": "GitHub リポジトリ",
     "hero.exampleButton": "キャラクター実例リポジトリ",
-    "hero.kicker": "今回の公開方針",
+    "hero.kicker": "現在の位相",
     "hero.status1.label": "モード",
     "hero.status1.value": "ローカル優先",
     "hero.status2.label": "バックエンド",
@@ -240,11 +234,11 @@ const translations = {
     "hero.status4.label": "状態",
     "hero.status4.value": "スモークテスト済み",
     "hero.microcopy":
-      "再利用ツールとキャラクター固有アセットを明確に分離した構成です。",
-    "visual.tag": "星図の工房",
-    "visual.title": "フレームワークそのものを映す一枚",
+      "再利用ツールをより高い層に置き、それぞれのキャラクターを別の世界線として扱うための構成です。",
+    "visual.tag": "アトラクタフィールド",
+    "visual.title": "同じ星空の下にある、より静かな座標図",
     "visual.body":
-      "星図、軌道幾何、公開ツールが静かな作業台の上に集められています。",
+      "星座線、機材の輪郭、書き込みの跡がひとつの画面に重なり、観測が方法へ変わる瞬間を映しています。",
     "stats.cli": "主要 CLI コマンド",
     "stats.repos": "リポジトリ層",
     "stats.instance": "検証済みキャラクター実例",
@@ -261,14 +255,14 @@ const translations = {
       "上流設定を手で編集せずに prepare、SoVITS 学習、GPT 学習、SoVITS 書き出しを実行できます。",
     "overview.card3.title": "参照バンクツール",
     "overview.card3.body":
-      "感情候補のラベリング、参照候補の絞り込み、公開向け参照バンクの整理を支援します。",
+      "感情候補のラベリング、参照候補の絞り込み、安定した参照バンクへの整理を支援します。",
     "overview.card4.title": "リポジトリ衛生",
     "overview.card4.body":
       "フレームワークリポジトリ、キャラクターリポジトリ、GitHub、Hugging Face の役割分離を支えます。",
-    "workflow.tag": "パイプライン",
-    "workflow.title": "データから公開までのローカルワークフロー",
+    "workflow.tag": "星図の経路",
+    "workflow.title": "台詞から安定した声線へ至る道筋",
     "workflow.body":
-      "manifest 構築、特徴準備、段階的学習、参照整理、公開パッケージ化までを 1 つのフレームワーク層に収めています。",
+      "manifest 構築、特徴準備、段階的学習、参照整理、試聴確認までを 1 つのフレームワーク層に収めています。",
     "workflow.step1.title": "manifest 構築",
     "workflow.step1.body":
       "転写 CSV と wav パスを 1 つの学習リストへ正規化します。",
@@ -281,9 +275,6 @@ const translations = {
     "workflow.step4.title": "参照整理",
     "workflow.step4.body":
       "感情制御やデモ向けに参照音声をラベル付けし、候補を絞り込みます。",
-    "workflow.step5.title": "公開パッケージ化",
-    "workflow.step5.body":
-      "コードは GitHub、大きな重みとデータセットは Hugging Face に置き、公開用キャラクターリポジトリを整えます。",
     "quick.tag": "クイックスタート",
     "quick.title": "最小のローカル導入",
     "quick.body":
@@ -300,14 +291,14 @@ const translations = {
     "commands.item8": "本実行前にローカル依存を確認する。",
     "links.docs.tag": "ドキュメント",
     "links.docs.title": "リポジトリ内ドキュメント",
-    "links.arch.tag": "アーキテクチャ",
-    "links.arch.title": "二分割公開モデル",
+    "links.arch.tag": "レイアウト",
+    "links.arch.title": "リポジトリ星図",
     "links.arch.item1": "フレームワークリポジトリは再利用ツールを担当",
-    "links.arch.item2": "キャラクターリポジトリは参照・メタデータ・デモを担当",
+    "links.arch.item2": "キャラクターリポジトリは声、参照、感情の断片を担当",
     "links.arch.item3": "大きな資産は Hugging Face へ",
-    "links.arch.item4": "公開ランディングページは GitHub Pages へ",
-    "links.external.tag": "外部リンク",
-    "links.external.title": "公開先",
+    "links.arch.item4": "ビジュアルページは GitHub Pages へ",
+    "links.external.tag": "シグナル",
+    "links.external.title": "このページの先へ",
     "links.external.repo": "GitHub フレームワークリポジトリ",
     "links.external.example": "Mayuri-Amadeus キャラクターリポジトリ",
     "links.external.model": "例の HF モデルリポジトリ",

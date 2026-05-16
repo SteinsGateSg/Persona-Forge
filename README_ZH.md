@@ -1,55 +1,42 @@
-# Persona-Forge
+<div align="center">
 
-<p align="left">
+# ✦ Persona-Forge ✦
+
+<p><em>面向角色语音系统的星图式工具框架</em></p>
+
+<p>
   <a href="https://steinsgatesg.github.io/Persona-Forge/">
-    <img src="https://img.shields.io/badge/Homepage-23384a?style=flat-square&logo=googlechrome&logoColor=f4f8ff" alt="Homepage" />
+    <img src="https://img.shields.io/badge/🌌%20Homepage-23384a?style=for-the-badge&logoColor=f4f8ff" alt="Homepage" />
   </a>
   <a href="https://github.com/SteinsGateSg/Persona-Forge">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=ffffff" alt="GitHub repository" />
+    <img src="https://img.shields.io/badge/🐙%20GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub repository" />
   </a>
   <a href="https://github.com/SteinsGateSg/Mayuri-Amadeus">
-    <img src="https://img.shields.io/badge/Example-Mayuri--Amadeus-7b4f3b?style=flat-square&logo=bookstack&logoColor=fffaf4" alt="Example character repository" />
+    <img src="https://img.shields.io/badge/🪐%20Example-Mayuri--Amadeus-7b4f3b?style=for-the-badge&logoColor=fffaf4" alt="Example character repository" />
   </a>
 </p>
 
-English documentation: [README.md](README.md)
+<p>
+  <img src="https://img.shields.io/badge/Workflow-GPT--SoVITS-27586b?style=flat-square" alt="Workflow" />
+  <img src="https://img.shields.io/badge/Selector-通用-b55d3f?style=flat-square" alt="Selector" />
+  <img src="https://img.shields.io/badge/Layout-双仓库-7e6b55?style=flat-square" alt="Layout" />
+  <img src="https://img.shields.io/badge/Focus-本地迭代-b68d54?style=flat-square" alt="Focus" />
+</p>
 
-`Persona-Forge` 是一个面向二次元 / 角色语音项目的通用训练工具仓库，底层围绕本地 `GPT-SoVITS` 工作流组织。
+简体中文 · <a href="README.md">English</a>
 
-它是“两个独立仓库”方案里的**通用框架仓库**：
+</div>
 
-- 框架仓库：可复用流程与工具
-- 角色仓库：某一个具体角色的数据、参考库、权重与 demo
-
-目前第一个完整角色实例是 `Mayuri-Amadeus`：
+`Persona-Forge` 是发布组合里的通用一侧：负责整理参考音频、构建 manifest、封装 GPT-SoVITS 训练阶段、选择参考提示，并把角色语音工作流组织成可复用的本地工具链。
 
 ## 这个仓库负责什么
 
-- 从转写 CSV 构建 GPT-SoVITS manifest
-- 执行 `prepare`
-- 训练 SoVITS
-- 导出 SoVITS 推理权重
-- 训练 GPT
-- 用固定 GPT + SoVITS 模型组合执行推理
-- 用 OpenAI 兼容接口标注参考音频情感
-- 用 `doctor` 检查本地训练环境
-
-## 仓库结构
-
-```text
-Persona-Forge/
-  character_voice_lab/
-    cli.py
-    manifest.py
-    gpt_sovits.py
-    reference_bank.py
-    synthesize.py
-  examples/
-    minimal_profile.yaml
-  README.md
-  README_ZH.md
-  pyproject.toml
-```
+- 从转写 CSV 构建 manifest
+- 封装 GPT-SoVITS 的 `prepare`、`train-sovits`、`train-gpt`
+- 提供面向 `refs/index.csv` 的通用参考音频 selector
+- 提供固定 GPT + SoVITS 组合的推理入口
+- 通过 OpenAI 兼容接口标注参考音频情感
+- 通过 `doctor` 检查本地环境
 
 ## 安装
 
@@ -59,21 +46,21 @@ cd Persona-Forge
 pip install -e .
 ```
 
-安装后主命令入口是：
+主命令入口：
 
 ```bash
 persona-forge
 ```
 
-兼容别名仍然保留：
+兼容别名：
 
 ```bash
 character-voice-lab
 ```
 
-## 常用命令
+## 核心命令
 
-### 1. 构建 manifest
+### 构建 manifest
 
 ```bash
 persona-forge build-manifest \
@@ -84,7 +71,7 @@ persona-forge build-manifest \
   --language ja
 ```
 
-### 2. 执行 prepare
+### 执行 GPT-SoVITS prepare
 
 ```bash
 persona-forge prepare \
@@ -96,7 +83,7 @@ persona-forge prepare \
   --gpus 0
 ```
 
-### 3. 训练 SoVITS
+### 训练 SoVITS
 
 ```bash
 persona-forge train-sovits \
@@ -110,7 +97,7 @@ persona-forge train-sovits \
   --epochs 16
 ```
 
-### 4. 训练 GPT
+### 训练 GPT
 
 ```bash
 persona-forge train-gpt \
@@ -124,7 +111,19 @@ persona-forge train-gpt \
   --epochs 8
 ```
 
-### 5. 生成试听 / 推理
+### 选择参考音频
+
+```bash
+persona-forge select-reference \
+  --refs-index /path/to/refs/index.csv \
+  --asset-root /path/to/character-repo \
+  --target-text "亲爱的你啊，好久不见。" \
+  --target-language 中文 \
+  --backend heuristic \
+  --format json
+```
+
+### 执行推理
 
 ```bash
 persona-forge synthesize \
@@ -139,7 +138,7 @@ persona-forge synthesize \
   --output-dir artifacts/preview/latest
 ```
 
-### 6. 标注参考音频情感
+### 标注参考音频情感
 
 ```bash
 persona-forge label-emotions \
@@ -149,26 +148,44 @@ persona-forge label-emotions \
   --resume
 ```
 
-## 当前阶段的定位
+### 检查本地环境
 
-这是第一版框架骨架，重点是先把 `Mayuri-Amadeus` 中已经验证过的通用流程抽出来：
+```bash
+persona-forge doctor \
+  --gpt-sovits-root /path/to/GPT-SoVITS \
+  --pretrained-root /path/to/GPT-SoVITS-models \
+  --manifest artifacts/manifests/train.list
+```
 
-- manifest 构建
-- GPT-SoVITS 训练包装
-- 参考库情感标注
-- 通用推理入口
+## 仓库结构
 
-下一步还可以继续补：
+```text
+Persona-Forge/
+  character_voice_lab/
+    cli.py
+    gpt_sovits.py
+    manifest.py
+    reference_bank.py
+    selector.py
+    synthesize.py
+  docs/
+  examples/
+    minimal_profile.yaml
+  README.md
+  README_ZH.md
+  pyproject.toml
+```
 
-- profile 驱动
-- refs 自动整理
-- 评测脚本
-- CI smoke test
+## 示例组合
 
-## 不包含什么
+`Mayuri-Amadeus` 是当前第一套完整角色实例：
 
-- 不直接内置 `GPT-SoVITS` 源码
-- 不直接内置底模
-- 不直接内置某个角色的数据和最终权重
+- 角色仓库：`Mayuri-Amadeus`
+- 通用框架：`Persona-Forge`
 
-这些内容应该由具体角色仓库承载。
+## 说明
+
+- `GPT-SoVITS` 源码不直接内置在本仓库中。
+- 底模不直接内置在本仓库中。
+- 最终大权重和原始数据集应放在角色仓库与 Hugging Face 发布物中。
+- 为了兼容已有代码，内部 Python 包路径仍然保持为 `character_voice_lab`。

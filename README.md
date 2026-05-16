@@ -1,55 +1,42 @@
-# Persona-Forge
+<div align="center">
 
-<p align="left">
+# ✦ Persona-Forge ✦
+
+<p><em>Constellation Toolkit for Character Voice Systems</em></p>
+
+<p>
   <a href="https://steinsgatesg.github.io/Persona-Forge/">
-    <img src="https://img.shields.io/badge/Homepage-23384a?style=flat-square&logo=googlechrome&logoColor=f4f8ff" alt="Homepage" />
+    <img src="https://img.shields.io/badge/🌌%20Homepage-23384a?style=for-the-badge&logoColor=f4f8ff" alt="Homepage" />
   </a>
   <a href="https://github.com/SteinsGateSg/Persona-Forge">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=ffffff" alt="GitHub repository" />
+    <img src="https://img.shields.io/badge/🐙%20GitHub-181717?style=for-the-badge&logo=github&logoColor=ffffff" alt="GitHub repository" />
   </a>
   <a href="https://github.com/SteinsGateSg/Mayuri-Amadeus">
-    <img src="https://img.shields.io/badge/Example-Mayuri--Amadeus-7b4f3b?style=flat-square&logo=bookstack&logoColor=fffaf4" alt="Example character repository" />
+    <img src="https://img.shields.io/badge/🪐%20Example-Mayuri--Amadeus-7b4f3b?style=for-the-badge&logoColor=fffaf4" alt="Example character repository" />
   </a>
 </p>
 
-Chinese documentation: [README_ZH.md](README_ZH.md)
+<p>
+  <img src="https://img.shields.io/badge/Workflow-GPT--SoVITS-27586b?style=flat-square" alt="Workflow" />
+  <img src="https://img.shields.io/badge/Selector-Generic-a55d3f?style=flat-square" alt="Selector" />
+  <img src="https://img.shields.io/badge/Layout-Two%20Repositories-7e6b55?style=flat-square" alt="Layout" />
+  <img src="https://img.shields.io/badge/Focus-Local%20Iteration-b68d54?style=flat-square" alt="Focus" />
+</p>
 
-`Persona-Forge` is a reusable training toolkit for anime / character voice projects built around a local `GPT-SoVITS` workflow.
+English · <a href="README_ZH.md">简体中文</a>
 
-This repository is the framework half of a two-repo split:
+</div>
 
-- framework repo: reusable workflow and tooling
-- character repo: one concrete character dataset, refs, weights, and demos
+`Persona-Forge` is the reusable half of the release pair: a local-first framework for curating references, preparing manifests, training GPT-SoVITS stages, selecting prompts, and packaging character-voice workflows.
 
-The first full character instance is `Mayuri-Amadeus`:
+## What Lives Here
 
-## What It Covers
-
-- build GPT-SoVITS manifests from CSV transcripts
-- run GPT-SoVITS `prepare`
-- train SoVITS
-- export SoVITS inference weights
-- train GPT
-- run inference with a fixed GPT + SoVITS model pair
-- label a reference bank with an OpenAI-compatible API
-- check local prerequisites with `doctor`
-
-## Repository Layout
-
-```text
-Persona-Forge/
-  character_voice_lab/
-    cli.py
-    manifest.py
-    gpt_sovits.py
-    reference_bank.py
-    synthesize.py
-  examples/
-    minimal_profile.yaml
-  README.md
-  README_ZH.md
-  pyproject.toml
-```
+- manifest construction from transcript CSV files
+- GPT-SoVITS `prepare`, `train-sovits`, and `train-gpt` wrappers
+- generic reference selector for curated `refs/index.csv` banks
+- synthesis entrypoint for fixed GPT + SoVITS pairs
+- reference-bank emotion labeling through OpenAI-compatible APIs
+- environment checks through `doctor`
 
 ## Installation
 
@@ -59,19 +46,19 @@ cd Persona-Forge
 pip install -e .
 ```
 
-After installation, the primary CLI entrypoint is:
+Primary CLI:
 
 ```bash
 persona-forge
 ```
 
-Backward-compatible alias:
+Compatibility alias:
 
 ```bash
 character-voice-lab
 ```
 
-## Commands
+## Core Commands
 
 ### Build a manifest
 
@@ -84,7 +71,7 @@ persona-forge build-manifest \
   --language ja
 ```
 
-### Run GPT-SoVITS prepare
+### Prepare GPT-SoVITS features
 
 ```bash
 persona-forge prepare \
@@ -124,7 +111,19 @@ persona-forge train-gpt \
   --epochs 8
 ```
 
-### Run inference
+### Select a reference
+
+```bash
+persona-forge select-reference \
+  --refs-index /path/to/refs/index.csv \
+  --asset-root /path/to/character-repo \
+  --target-text "亲爱的你啊，好久不见。" \
+  --target-language 中文 \
+  --backend heuristic \
+  --format json
+```
+
+### Run synthesis
 
 ```bash
 persona-forge synthesize \
@@ -139,7 +138,7 @@ persona-forge synthesize \
   --output-dir artifacts/preview/latest
 ```
 
-### Label reference emotions
+### Label a reference bank
 
 ```bash
 persona-forge label-emotions \
@@ -149,9 +148,44 @@ persona-forge label-emotions \
   --resume
 ```
 
+### Inspect the local environment
+
+```bash
+persona-forge doctor \
+  --gpt-sovits-root /path/to/GPT-SoVITS \
+  --pretrained-root /path/to/GPT-SoVITS-models \
+  --manifest artifacts/manifests/train.list
+```
+
+## Repository Layout
+
+```text
+Persona-Forge/
+  character_voice_lab/
+    cli.py
+    gpt_sovits.py
+    manifest.py
+    reference_bank.py
+    selector.py
+    synthesize.py
+  docs/
+  examples/
+    minimal_profile.yaml
+  README.md
+  README_ZH.md
+  pyproject.toml
+```
+
+## Example Pair
+
+`Mayuri-Amadeus` is the first complete character repository built on top of this workflow:
+
+- character repo: `Mayuri-Amadeus`
+- framework repo: `Persona-Forge`
+
 ## Notes
 
-- This repo does not bundle `GPT-SoVITS` itself.
-- This repo does not bundle pretrained base models.
-- Character-specific data and final weights should live in a separate character repo.
-- The internal Python package path remains `character_voice_lab` for stability.
+- `GPT-SoVITS` source code is external.
+- Pretrained base models are external.
+- Final large weights and raw datasets belong in character repositories and Hugging Face releases.
+- The internal Python package path remains `character_voice_lab` for compatibility.
